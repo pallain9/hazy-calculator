@@ -1,15 +1,16 @@
+//Ignore empty string
 function isSkippedValue(value) {
   return !value
 }
-
+// Null =0
 function isNumericValue(value) {
   return !isNaN(value)
 }
-
+//ignore undefinded value
 function isNothingValue(value) {
   return value === null
 }
-
+//stringified numbers should be treated as numbers
 function isAcceptableValue(value) {
   const operators = ['+', '-', '*', '/']
   return typeof value === Number || operators.includes(value)
