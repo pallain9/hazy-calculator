@@ -13,7 +13,7 @@ function isNothingValue(value) {
 //stringified numbers should be treated as numbers
 function isAcceptableValue(value) {
   const operators = ['+', '-', '*', '/']
-  return typeof value === Number || operators.includes(value)
+  return typeof value === Number || operators.includes(value) || isSkippedValue(value)
 }
 
 function performCalculationStep(firstOperand, operator, secondOperand) {
