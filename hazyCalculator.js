@@ -1,19 +1,19 @@
-//Ignore empty string
+
 function isSkippedValue(value) {
   return !value
 }
-// Null =0
+
 function isNumericValue(value) {
   return !isNaN(value)
 }
-//ignore undefinded value
+
 function isNothingValue(value) {
-  return value === null
+  return value === null || value === undefined
 }
-//stringified numbers should be treated as numbers
+
 function isAcceptableValue(value) {
   const operators = ['+', '-', '*', '/']
-  return isNumericValue(value) || operators.includes(value) || isSkippedValue(value)
+  return isNumericValue(value) || operators.includes(value) || isSkippedValue(value) || isNothingValue(value)
 }
 
 function performCalculationStep(firstOperand, operator, secondOperand) {
